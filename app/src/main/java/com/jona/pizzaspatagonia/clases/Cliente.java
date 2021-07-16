@@ -3,8 +3,17 @@ package com.jona.pizzaspatagonia.clases;
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
-    private String email, nombres, apellidos, numero, direccion, clave;
-    private int administrador;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private String email, nombres, apellidos, numero, direccion, clave, administrador;
 
     public String getEmail() {
         return email;
@@ -54,11 +63,30 @@ public class Cliente implements Serializable {
         this.clave = clave;
     }
 
-    public int getAdministrador() {
+    public String getAdministrador() {
         return administrador;
     }
 
-    public void setAdministrador(int administrador) {
+    public void setAdministrador(String administrador) {
         this.administrador = administrador;
+    }
+
+    public Cliente() {
+    }
+
+    @Override
+    public String toString() {
+        return email;
+    }
+
+    public Cliente(int id, String email, String nombres, String apellidos, String numero, String direccion, String clave) {
+        this.id = id;
+        this.email = email;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.numero = numero;
+        this.direccion = direccion;
+        this.clave = clave;
+        this.administrador = "no";
     }
 }
